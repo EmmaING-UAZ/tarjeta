@@ -1,0 +1,5 @@
+/* Podemos dejar este archivo vacío si Tailwind cubre todo,
+   o agregar estilos específicos si es necesario. */
+.arjs-loader {
+    display: none; /* Ocultamos el loader por defecto de AR.js */
+}
