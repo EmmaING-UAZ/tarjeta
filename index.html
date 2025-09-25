@@ -13,8 +13,8 @@
 
     <div id="loader" class="fixed top-0 left-0 w-full h-full bg-white bg-opacity-95 flex justify-center items-center z-50">
         <div class="text-center text-gray-800">
-            <div class="border-t-4 border-blue-600 border-solid rounded-full w-12 h-12 animate-spin mb-4"></div>
-            <p class="text-lg font-medium">Iniciando cámara...</p>
+            <div class="border-t-4 border-blue-500 border-solid rounded-full w-12 h-12 animate-spin mb-4"></div>
+            <p class="text-lg font-medium">Apunte al marcador para comenzar...</p>
         </div>
     </div>
 
@@ -24,16 +24,40 @@
             
             <a-entity position="0 0.1 0" rotation="-90 0 0" scale="1.2 1.2 1.2">
 
-                <a-plane position="0 0 -0.05" width="2" height="1.1" color="#FFFFFF" material="shader: flat; transparent: true; opacity: 0.95;" shadow></a-plane>
+                <!-- Fondo de la tarjeta -->
+                <a-plane position="0 0 -0.01" width="2" height="1.1" color="#F9FAFB" material="shader: flat; transparent: true; opacity: 0.98;" shadow></a-plane>
                 
-                <a-image src="assets/emmanuel.png" width="0.5" height="0.5" position="-0.7 0.25 0"></a-image>
+                <!-- Encabezado azul -->
+                <a-plane position="0 0.35 0" width="2" height="0.4" color="#3B82F6"></a-plane>
 
-                <a-text value="Jesus Emmanuel Perea Martinez" color="#1F2937" align="left" position="-0.4 0.45 0" width="2.5"></a-text>
-                <a-text value="Ing. en Computacion" color="#4B5563" align="left" position="-0.4 0.35 0" width="2"></a-text>
+                <!-- Imagen de perfil circular -->
+                <a-image src="assets/emmanuel.png" width="0.5" height="0.5" position="-0.7 0.25 0.01" geometry="primitive: circle; radius: 0.25"></a-image>
+
+                <!-- Nombre y Título -->
+                <a-text value="Jesus Emmanuel Perea Martinez" color="#1F2937" align="left" position="-0.4 0.4 0.01" width="2.5" font="https://cdn.aframe.io/fonts/Roboto-Bold.json"></a-text>
+                <a-text value="Ing. en Computacion" color="#4B5563" align="left" position="-0.4 0.3 0.01" width="2"></a-text>
                 
-                <a-text value="Tel: 492-223-7517" color="#1F2937" align="left" position="-0.4 0.15 0" width="1.8"></a-text>
-                <a-text value="Email: jrperea3@gmail.com" color="#1F2937" align="left" position="-0.4 0.05 0" width="1.8"></a-text>
-                <a-text value="LinkedIn: /in/perea-martinez..." color="#0A66C2" align="left" position="-0.4 -0.05 0" width="1.8"></a-text>
+                <!-- Información de contacto con iconos e interactividad -->
+                <!-- Teléfono -->
+                <a-entity link="href: tel:4922237517">
+                    <a-plane color="#3B82F6" width="0.1" height="0.1" position="-0.8 -0.05 0.01" material="shader: flat" geometry="primitive: circle; radius: 0.07"></a-plane>
+                    <a-text value="📞" position="-0.8 -0.05 0.02" align="center" width="2"></a-text>
+                    <a-text value="492-223-7517" color="#1F2937" align="left" position="-0.65 -0.05 0.01" width="1.8"></a-text>
+                </a-entity>
+
+                <!-- Email -->
+                <a-entity link="href: mailto:jrperea3@gmail.com">
+                    <a-plane color="#3B82F6" width="0.1" height="0.1" position="-0.8 -0.2 0.01" material="shader: flat" geometry="primitive: circle; radius: 0.07"></a-plane>
+                    <a-text value="✉️" position="-0.8 -0.2 0.02" align="center" width="2"></a-text>
+                    <a-text value="jrperea3@gmail.com" color="#1F2937" align="left" position="-0.65 -0.2 0.01" width="1.8"></a-text>
+                </a-entity>
+
+                <!-- LinkedIn -->
+                <a-entity link="href: https://www.linkedin.com/in/perea-martinez">
+                    <a-plane color="#0A66C2" width="0.1" height="0.1" position="-0.8 -0.35 0.01" material="shader: flat" geometry="primitive: circle; radius: 0.07"></a-plane>
+                    <a-text value="in" position="-0.8 -0.35 0.02" align="center" width="1.5" font="https://cdn.aframe.io/fonts/Roboto-Bold.json"></a-text>
+                    <a-text value="/in/perea-martinez" color="#0A66C2" align="left" position="-0.65 -0.35 0.01" width="1.8"></a-text>
+                </a-entity>
 
             </a-entity>
 
